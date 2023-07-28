@@ -1,0 +1,113 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Webpack + Pug';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  section(class="relative bg-[url(https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2017/03/MicMind03-f3bb.jpg)] pt-[200px] pb-[200px] bg-center")
+    div(class="bg-black/30 absolute top-0 left-0 w-full h-full")
+    .text-white.text-center.relative
+      h1(class="text-3xl mt-5 mb-2.5 font-medium")
+        |MicMind Studio
+        br
+        |用聲音傳遞理想
+        br
+        |用空間品味生活
+      .text-lg.font-light
+        |台北最美 Podcast 錄音室
+        br
+        br
+      a(class="inline-block border-2 border-white rounded-md px-4 py-2.5 my-5" href="#") 立即預約
+  section.pt-10.pb-5
+    div(class="px-[15px]")
+      ul.flex.justify-center
+        li(class="text-sm border-b border-[#ddd] text-[#43454b]")
+          a(class="tab-item block py-2.5 px-[15px] border-b-2 border-black" href="#tab1") 錄音室預訂
+        li(class="text-sm border-b border-[#ddd] text-[#43454b]")
+          a(class="tab-item block py-2.5 px-[15px]" href="#tab2") 常客優惠方案
+        li(class="text-sm border-b border-[#ddd] text-[#43454b]")
+          a(class="tab-item block py-2.5 px-[15px]" href="#tab3") Podcast 製作服務
+      #tab-content
+        #tab1.tab-content.pt-5
+          div(class="grid grid-cols-2 gap-x-[4%] gap-y-10 text-center")
+            +product('5D盒子｜最多3人錄音')
+            +product('小日子｜最多2人錄音')
+            +product('粉紅音浪｜最多3人錄音')
+        #tab2.tab-content.pt-5.hidden
+          div(class="grid grid-cols-2 gap-x-[4%] gap-y-10 text-center")
+            +product('7小時｜全錄音室主題任選', true)
+            +product('12小時｜全錄音室主題任選', true)
+            +product('25小時｜全錄音室主題任選', true)
+        #tab3.tab-content.pt-5.hidden
+          div(class="grid grid-cols-2 gap-x-[4%] gap-y-10 text-center")
+            +product('音檔剪輯（40分鐘）', true)
+            +product('音檔剪輯（70分鐘）', true)
+            +product('影像剪輯｜不含字幕（30分）', true)
+  section.py-20
+    .text-center
+      h1(class="text-3xl mt-5 mb-2.5 font-medium") MicMind 錄音室設備簡介
+      p(class="mb-2.5 text-lg font-light") 各項錄音器材及設備
+      .grid.grid-cols-2
+        each val in [1, 2, 3]
+          div(class="mt-[35px] px-[15px]")
+            div(class="w-[120px] h-[120px] rounded-full bg-white overflow-hidden mx-auto")
+              img(class="w-[120px] h-[120px]" src="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2017/03/RODE-CASTER-PRO_工作區域-1-e9f1-300x300.png" alt="")
+            div
+              h3(class="mt-5 mb-2.5 font-medium text-[#323232]") RODE Caster Pro 錄音介面
+              p(class="mb-2.5 font-light text-[#323232]")
+                |直播廣播 Podcast 必備
+                br
+                |神器支援 4 軌
+  section.py-10
+    div(class="px-[15px]")
+      iframe(class="max-w-full" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.286525283335!2d121.490503!3d25.058276!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8e26d391cdd%3A0x84a3a5c489c088cf!2z6ZuZ5oiQ5pW45L2N6KGM6Yq36IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1690544736232!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen= loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+    div(class="px-[15px]")
+      div
+        h1(class="text-[21px] mt-5 mb-[5px] font-medium") MicMind Studio 交通指南
+        p(class="font-light text-lg mb-2.5") 台北市中山區復興北路 62 號 4F-3
+      div
+        h4(class="font-medium mt-2.5 inline-block") 捷運
+        p(class="font-light mb-[5px]") 捷運文湖線或松山新店線「南京復興」站，3 號出口，步行約 3 分鐘
+      div
+        h4(class="font-medium mt-2.5 inline-block") 捷運
+        p(class="font-light mb-[5px]")
+          |① 復興北路芝麻大廈站
+          br
+          |521、685、903、復興幹線
+          br
+          br
+          |② 長安東路二段中興中學站
+          br
+          |52、202、203、205、257、2021
+      div
+        h4(class="font-medium mt-2.5 inline-block") 停車場資訊
+        p(class="font-light mb-[5px]")
+          |1. City Parking 城市車旅合庫總行停車場
+          br
+          |2. 台灣聯通 復興北場
+          br
+          |3. 台灣聯通 中興場
+
+
+
+
+
+block script
+  script(type='text/javascript').
+    const tabs = document.querySelectorAll('.tab-item')
+    const tabContents = document.querySelectorAll('.tab-content')
+
+    tabs.forEach((tab)=>{
+      tab.addEventListener('click', function(e) {
+        for(let i = 0;i<tabs.length;i++){
+          tabs[i].classList.remove('border-b-2', 'border-black')
+          tabContents[i].classList.add('hidden')
+        }
+        e.preventDefault();
+        this.classList.add('border-b-2', 'border-black')
+        const tabContent = document.querySelector(this.getAttribute('href'))
+        tabContent.classList.remove('hidden')
+      })
+    })

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.line {
+  @apply h-[3px] bg-[#333] block rounded;
+}
+
+.hamburger-btn {
+  @apply w-[25px] h-[19px] flex place-items-center relative;
+  span {
+    @apply line w-full;
+  }
+  &:before {
+    @apply top-0;
+  }
+  &:after {
+    @apply bottom-0;
+  }
+  &:before, &:after {
+    @apply content-[''] line absolute w-full;
+  }
+}
+
+.menu-item {
+  @apply leading-[50px] border-b border-black/20 px-[5%];
+  + * .menu-item {
+    @apply pl-[10%] block;
+  }
+}
