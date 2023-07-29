@@ -1,37 +1,37 @@
-header
-  div(class="pb-2.5 pt-[15px] px-2.5 flex place-content-center relative")
+header.relative.z-10
+  div(class="pb-2.5 pt-[15px] px-2.5 flex place-content-center relative md:justify-between")
     button(type="button" class="md:hidden absolute top-1/2 -translate-y-1/2 left-2 w-[55px] h-[55px] flex justify-center items-center")
       span.hamburger-btn
         span
     a(href="/")
       img(class="max-h-[45px]" src="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/logo-48x200-42c7.png", alt="")
-    div(class="menu-mask hidden bg-black/70 md:bg-transparent fixed md:static left-0 top-0 w-full h-full")
-      ul(class="w-4/5 md:w-auto bg-[#212121] max-w-xs fixed top-0 bottom-0 text-white")
-        li
-          a.menu-item.menu-link.flex.justify-between.items-center(href="#")
+    div(class="menu-mask hidden md:block bg-black/70 md:bg-transparent fixed md:static left-0 top-0 w-full h-full md:w-auto")
+      ul(class="w-4/5 md:w-auto md:flex md:mr-9 bg-[#212121] md:bg-transparent max-w-xs md:max-w-none fixed md:static top-0 bottom-0 text-white md:text-black md:text-sm")
+        li.group.relative
+          a.menu-item.menu-link.flex.justify-between.items-center.whitespace-nowrap(class="md:pr-7" href="#")
             |MicMind Studio
-            span.text-2xl.rotate-90.origin-center &#155;
-          ul.hidden
+            span.text-2xl.rotate-90.origin-center(class="md:pb-6") &#155;
+          ul.hidden(class="group-hover:block md:absolute md:bg-white")
             li
-              a.menu-item(href="#") 錄音室主題
+              a.menu-item(class="w-[220px]" href="#") 錄音室主題
             li
-              a.menu-item(href="#") 錄音設備
+              a.menu-item(class="w-[220px]" href="#") 錄音設備
             li
-              a.menu-item(href="#") 常見問題
-        li
-          a.menu-item.menu-link.flex.justify-between.items-center(href="#")
+              a.menu-item(class="w-[220px]" href="#") 常見問題
+        li.group.relative
+          a.menu-item.menu-link.flex.justify-between.items-center.whitespace-nowrap(class="md:pr-7 group" href="#")
             |Price
-            span.text-2xl.rotate-90.origin-center &#155;
-          ul.hidden
+            span.text-2xl.rotate-90.origin-center(class="md:pb-6") &#155;
+          ul.hidden(class="group-hover:block md:absolute md:bg-white")
             li
-              a.menu-item(href="#") 錄音室預訂
+              a.menu-item(class="w-[220px]" href="#") 錄音室預訂
             li
-              a.menu-item(href="#") 常客優惠方案
+              a.menu-item(class="w-[220px]" href="#") 常客優惠方案
             li
-              a.menu-item(href="#") Podcast 製作服務
+              a.menu-item(class="w-[220px]" href="#") Podcast 製作服務
             li
-              a.menu-item(href="#") 器材出租
+              a.menu-item(class="w-[220px]" href="#") 器材出租
         li
-          a.menu-item.menu-link.flex.justify-between.items-center(href="/")
+          a.menu-item.menu-link.flex.justify-between.items-center.whitespace-nowrap(class="md:pr-7" href="/")
             |My Account
-            span.text-2xl.rotate-90.origin-center &#155;
+            span.text-2xl.rotate-90.origin-center(class="md:pb-6") &#155;

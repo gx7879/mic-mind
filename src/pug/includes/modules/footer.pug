@@ -1,3 +1,14 @@
-footer
-  .container
-    span footer is here
+footer(class="bg-[#23282d] py-10")
+  div(class="px-[15px] text-white")
+    .text-center
+      h1(class="mb-2.5 font-medium") MicMind Studio
+      p(class="font-light text-sm mb-2.5") Podcast 錄音 | 空間租借
+        br
+        | 錄音 / 錄影 / 直播 / 拍攝 / 開會
+      .flex
+        ul(class="flex text-xs mx-auto my-[5px]")
+          each val in ['MicMind Studio', '訂單查詢', '購物車']
+            li(class="[&:not(:last-child)]:border-r px-1.5 border-white")
+              a(href="#")= val
+
+

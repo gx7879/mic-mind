@@ -3,11 +3,11 @@ import "./assets/scss/main.scss";
 const menuLink = document.querySelectorAll(".menu-link");
 const mask = document.querySelector(".menu-mask");
 const menuBtn = document.querySelector(".hamburger-btn");
-menuBtn.addEventListener("click", function() {
+menuBtn.addEventListener("click", function () {
   mask.classList.toggle("hidden");
 });
 
-mask.addEventListener("click", function(e) {
+mask.addEventListener("click", function (e) {
   // e.stopPropagation();
   if (e.target === mask) {
     mask.classList.toggle("hidden");

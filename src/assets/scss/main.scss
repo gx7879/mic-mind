@@ -23,7 +23,7 @@
 }
 
 .menu-item {
-  @apply leading-[50px] border-b border-black/20 px-[5%];
+  @apply leading-[50px] border-b md:border-0 border-black/20 px-[5%];
   + * .menu-item {
     @apply pl-[10%] block;
   }

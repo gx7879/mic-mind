@@ -9,19 +9,19 @@ block content
   section(class="relative bg-[url(https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2017/03/MicMind03-f3bb.jpg)] pt-[200px] pb-[200px] bg-center")
     div(class="bg-black/30 absolute top-0 left-0 w-full h-full")
     .text-white.text-center.relative
-      h1(class="text-3xl mt-5 mb-2.5 font-medium")
+      h1(class="text-3xl md:text-[40px] mt-5 mb-2.5 font-medium md:leading-[1.3]")
         |MicMind Studio
         br
         |用聲音傳遞理想
         br
         |用空間品味生活
-      .text-lg.font-light
+      div(class="text-lg font-light md:text-2xl")
         |台北最美 Podcast 錄音室
         br
         br
-      a(class="inline-block border-2 border-white rounded-md px-4 py-2.5 my-5" href="#") 立即預約
+      a(class="inline-block border-2 border-white rounded-md px-4 py-2.5 my-5 md:text-lg" href="#") 立即預約
   section.pt-10.pb-5
-    div(class="px-[15px]")
+    div(class="px-[15px] md:px-[30px]")
       ul.flex.justify-center
         li(class="text-sm border-b border-[#ddd] text-[#43454b]")
           a(class="tab-item block py-2.5 px-[15px] border-b-2 border-black" href="#tab1") 錄音室預訂
@@ -31,25 +31,25 @@ block content
           a(class="tab-item block py-2.5 px-[15px]" href="#tab3") Podcast 製作服務
       #tab-content
         #tab1.tab-content.pt-5
-          div(class="grid grid-cols-2 gap-x-[4%] gap-y-10 text-center")
+          div(class="grid grid-cols-2 md:grid-cols-3 gap-x-[4%] gap-y-10 text-center")
             +product('5D盒子｜最多3人錄音')
             +product('小日子｜最多2人錄音')
             +product('粉紅音浪｜最多3人錄音')
         #tab2.tab-content.pt-5.hidden
-          div(class="grid grid-cols-2 gap-x-[4%] gap-y-10 text-center")
+          div(class="grid grid-cols-2 md:grid-cols-3 gap-x-[4%] gap-y-10 text-center")
             +product('7小時｜全錄音室主題任選', true)
             +product('12小時｜全錄音室主題任選', true)
             +product('25小時｜全錄音室主題任選', true)
         #tab3.tab-content.pt-5.hidden
-          div(class="grid grid-cols-2 gap-x-[4%] gap-y-10 text-center")
+          div(class="grid grid-cols-2 md:grid-cols-3 gap-x-[4%] gap-y-10 text-center")
             +product('音檔剪輯（40分鐘）', true)
             +product('音檔剪輯（70分鐘）', true)
             +product('影像剪輯｜不含字幕（30分）', true)
   section.py-20
     .text-center
-      h1(class="text-3xl mt-5 mb-2.5 font-medium") MicMind 錄音室設備簡介
-      p(class="mb-2.5 text-lg font-light") 各項錄音器材及設備
-      .grid.grid-cols-2
+      h1(class="text-3xl mt-5 mb-2.5 font-medium md:text-4xl") MicMind 錄音室設備簡介
+      p(class="mb-2.5 text-lg font-light md:text-2xl") 各項錄音器材及設備
+      div(class="grid grid-cols-2 md:grid-cols-4")
         each val in [1, 2, 3]
           div(class="mt-[35px] px-[15px]")
             div(class="w-[120px] h-[120px] rounded-full bg-white overflow-hidden mx-auto")
@@ -61,35 +61,79 @@ block content
                 br
                 |神器支援 4 軌
   section.py-10
+    div(class="md:grid md:grid-cols-[7fr_5fr]")
+      div(class="px-[15px]")
+        iframe(class="max-w-full" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.286525283335!2d121.490503!3d25.058276!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8e26d391cdd%3A0x84a3a5c489c088cf!2z6ZuZ5oiQ5pW45L2N6KGM6Yq36IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1690544736232!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen= loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+      div(class="px-[15px]")
+        div
+          h1(class="text-[21px] mt-5 mb-[5px] font-medium") MicMind Studio 交通指南
+          p(class="font-light text-lg mb-2.5") 台北市中山區復興北路 62 號 4F-3
+        div
+          h4(class="font-medium mt-2.5 inline-block") 捷運
+          p(class="font-light mb-[5px]") 捷運文湖線或松山新店線「南京復興」站，3 號出口，步行約 3 分鐘
+        div
+          h4(class="font-medium mt-2.5 inline-block") 捷運
+          p(class="font-light mb-[5px]")
+            |① 復興北路芝麻大廈站
+            br
+            |521、685、903、復興幹線
+            br
+            br
+            |② 長安東路二段中興中學站
+            br
+            |52、202、203、205、257、2021
+        div
+          h4(class="font-medium mt-2.5 inline-block") 停車場資訊
+          p(class="font-light mb-[5px]")
+            |1. City Parking 城市車旅合庫總行停車場
+            br
+            |2. 台灣聯通 復興北場
+            br
+            |3. 台灣聯通 中興場
+  section.py-20
+    h1(class="text-center mt-5 mb-10 text-3xl") 常見問題
     div(class="px-[15px]")
-      iframe(class="max-w-full" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.286525283335!2d121.490503!3d25.058276!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8e26d391cdd%3A0x84a3a5c489c088cf!2z6ZuZ5oiQ5pW45L2N6KGM6Yq36IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1690544736232!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen= loading="lazy" referrerpolicy="no-referrer-when-downgrade")
-    div(class="px-[15px]")
       div
-        h1(class="text-[21px] mt-5 mb-[5px] font-medium") MicMind Studio 交通指南
-        p(class="font-light text-lg mb-2.5") 台北市中山區復興北路 62 號 4F-3
-      div
-        h4(class="font-medium mt-2.5 inline-block") 捷運
-        p(class="font-light mb-[5px]") 捷運文湖線或松山新店線「南京復興」站，3 號出口，步行約 3 分鐘
-      div
-        h4(class="font-medium mt-2.5 inline-block") 捷運
-        p(class="font-light mb-[5px]")
-          |① 復興北路芝麻大廈站
-          br
-          |521、685、903、復興幹線
-          br
-          br
-          |② 長安東路二段中興中學站
-          br
-          |52、202、203、205、257、2021
-      div
-        h4(class="font-medium mt-2.5 inline-block") 停車場資訊
-        p(class="font-light mb-[5px]")
-          |1. City Parking 城市車旅合庫總行停車場
-          br
-          |2. 台灣聯通 復興北場
-          br
-          |3. 台灣聯通 中興場
+        .panel
+          div(class="panel-heading border-t border-[#ddd] py-2.5 px-[15px]")
+            h4.flex.justify-between.items-center
+              a(class="text-lg font-medium" href="#")  1. 如何預約錄音室 ?
+              svg.w-6.h-6(xmlns="http://www.w3.org/2000/svg", fill="none", viewBox="0 0 24 24", stroke-width="1.5", stroke="currentColor")
+                path(stroke-linecap="round", stroke-linejoin="round", d="M8.25 4.5l7.5 7.5-7.5 7.5")
+          .hidden.panel-body
+            div(class="p-[15px] font-light")
+              p ① 第一次預約請點選「My Account」註冊會員並登入帳號。
+                br
+                br
+                | ② 點選您想預約的錄音室，選擇日期及時段，預設為1小時，若需預約2小時以上，請點選「預約錄音時間」。
+                br
+                | 再選擇實際錄音人數，方便我們提前為您架設麥克風。
+                br
+                | 接著按下「立即預約」。
+                br
+                br
+                | ③ 如您有購買「常客優惠方案」或是持有「優惠折扣碼」，請於結帳頁面上方按下輸入折價碼。
+                br
+                br
+                | ④ 完成線上付款，即完成您的預約，系統將會自動發送預約完成通知信到您先前填寫的E-mail信箱。
 
+        .panel
+          div(class="panel-heading border-t border-[#ddd] py-2.5 px-[15px]")
+            h4.flex.justify-between.items-center
+              a(class="text-lg font-medium" href="#")  2. 沒有預約可以直接到現場嗎 ?
+              svg.w-6.h-6(xmlns="http://www.w3.org/2000/svg", fill="none", viewBox="0 0 24 24", stroke-width="1.5", stroke="currentColor")
+                path(stroke-linecap="round", stroke-linejoin="round", d="M8.25 4.5l7.5 7.5-7.5 7.5")
+          .hidden.panel-body
+            div(class="p-[15px] font-light")
+              p 目前採預約制，請於兩天前預約完成。若需臨時租用空間，請電洽 (02) 2750 6093 或私訊到 MicMind LINE@ 詢問小編。
+                br
+                br
+                | ✔ 提醒：要確認付款成功才算預約完成哦！
+                br
+                br
+                | 加 LINE 好友：https://lin.ee/Qtj05SE
+                br
+                img(data-src="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2017/03/成為Mic友_工作區域-1-338c-1024x512.png", src="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2017/03/成為Mic友_工作區域-1-338c-1024x512.png")
 
 
 
@@ -109,5 +153,85 @@ block script
         this.classList.add('border-b-2', 'border-black')
         const tabContent = document.querySelector(this.getAttribute('href'))
         tabContent.classList.remove('hidden')
+      })
+    })
+    let slideUp = (target, duration=500) => {
+      target.style.transitionProperty = 'height, margin, padding';
+      target.style.transitionDuration = duration + 'ms';
+      target.style.boxSizing = 'border-box';
+      target.style.height = target.offsetHeight + 'px';
+      target.offsetHeight;
+      target.style.overflow = 'hidden';
+      target.style.height = 0;
+      target.style.paddingTop = 0;
+      target.style.paddingBottom = 0;
+      target.style.marginTop = 0;
+      target.style.marginBottom = 0;
+      window.setTimeout( () => {
+        target.style.display = 'none';
+        target.style.removeProperty('height');
+        target.style.removeProperty('padding-top');
+        target.style.removeProperty('padding-bottom');
+        target.style.removeProperty('margin-top');
+        target.style.removeProperty('margin-bottom');
+        target.style.removeProperty('overflow');
+        target.style.removeProperty('transition-duration');
+        target.style.removeProperty('transition-property');
+        //alert("!");
+      }, duration);
+    }
+
+    let slideDown = (target, duration=500) => {
+      target.style.removeProperty('display');
+      let display = window.getComputedStyle(target).display;
+
+      if (display === 'none')
+        display = 'block';
+
+      target.style.display = display;
+      let height = target.offsetHeight;
+      target.style.overflow = 'hidden';
+      target.style.height = 0;
+      target.style.paddingTop = 0;
+      target.style.paddingBottom = 0;
+      target.style.marginTop = 0;
+      target.style.marginBottom = 0;
+      target.offsetHeight;
+      target.style.boxSizing = 'border-box';
+      target.style.transitionProperty = "height, margin, padding";
+      target.style.transitionDuration = duration + 'ms';
+      target.style.height = height + 'px';
+      target.style.removeProperty('padding-top');
+      target.style.removeProperty('padding-bottom');
+      target.style.removeProperty('margin-top');
+      target.style.removeProperty('margin-bottom');
+      window.setTimeout( () => {
+        target.style.removeProperty('height');
+        target.style.removeProperty('overflow');
+        target.style.removeProperty('transition-duration');
+        target.style.removeProperty('transition-property');
+      }, duration);
+    }
+    const panels = document.querySelectorAll('.panel')
+
+    panels.forEach((panel)=>{
+      panel.addEventListener('click', function(e) {
+        e.preventDefault()
+        for(let i = 0;i< panels.length;i++) {
+          const panelBody = panels[i].querySelector('.panel-body')
+          if(window.getComputedStyle(panelBody).display !== 'none'){
+            panels[i].querySelector('.panel-heading svg').classList.remove('rotate-90')
+            slideUp(panelBody)
+          }
+        }
+        const panelBody = this.querySelector('.panel-body')
+        //- this.querySelector('.panel-body').classList.remove('hidden')
+        if(window.getComputedStyle(panelBody).display === 'none'){
+          this.querySelector('.panel-heading svg').classList.add('rotate-90')
+          slideDown(panelBody)
+        }else{
+          this.querySelector('.panel-heading svg').classList.remove('rotate-90')
+          slideUp(panelBody)
+        }
       })
     })
