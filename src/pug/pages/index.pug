@@ -3,7 +3,7 @@ extends ../layout/main
 block variables
   - var title = 'Webpack + Pug';
   - var description = 'Description for Webpack + Pug';
-  - var pageClass = 'index-page';
+  - var pageClass = 'bg-[#f4f4f4]';
 
 block content
   section(class="relative bg-[url(https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2017/03/MicMind03-f3bb.jpg)] pt-[200px] pb-[200px] bg-center")
@@ -20,7 +20,7 @@ block content
         br
         br
       a(class="inline-block border-2 border-white rounded-md px-4 py-2.5 my-5 md:text-lg" href="#") 立即預約
-  section.pt-10.pb-5
+  section.pt-10.pb-5#topic
     div(class="px-[15px] md:px-[30px]")
       ul.flex.justify-center
         li(class="text-sm border-b border-[#ddd] text-[#43454b]")
@@ -45,7 +45,7 @@ block content
             +product('音檔剪輯（40分鐘）', true)
             +product('音檔剪輯（70分鐘）', true)
             +product('影像剪輯｜不含字幕（30分）', true)
-  section.py-20
+  section.py-20#equipment
     .text-center
       h1(class="text-3xl mt-5 mb-2.5 font-medium md:text-4xl") MicMind 錄音室設備簡介
       p(class="mb-2.5 text-lg font-light md:text-2xl") 各項錄音器材及設備
@@ -90,7 +90,7 @@ block content
             |2. 台灣聯通 復興北場
             br
             |3. 台灣聯通 中興場
-  section.py-20
+  section.py-20#question
     h1(class="text-center mt-5 mb-10 text-3xl") 常見問題
     div(class="px-[15px]")
       div
@@ -235,3 +235,22 @@ block script
         }
       })
     })
+    const scrollTo = (element) => {
+      window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: element.offsetTop
+      });
+      console
+    }
+    const menuItems = document.querySelectorAll('.menu-item')
+    menuItems.forEach((menu)=>{
+      menu.addEventListener('click', function(e) {
+        const target = this.getAttribute('href')
+        if(target.indexOf('#') > -1 && target.length>1){
+          e.preventDefault()
+          scrollTo(document.querySelector(target))
+        }
+      })
+    })
+
