@@ -1,0 +1,83 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Webpack + Pug';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'booking';
+
+block head
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css")
+
+block content
+  div(class="bg-[#f4f4f4] text-[#eee] p-5 flex items-center flex-wrap")
+    ul.flex.items-center.text-sm
+      li.inline-flex.items-center
+        a(class="text-gray-600 hover:text-blue-500" href='/')
+          svg.w-5.h-auto.fill-current.mx-2.text-gray-400(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 24 24', fill='#000000')
+            path(d='M0 0h24v24H0V0z', fill='none')
+            path(d='M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z')
+        svg.w-5.h-auto.fill-current.mx-2.text-gray-400(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 24 24')
+          path(d='M0 0h24v24H0V0z', fill='none')
+          path(d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z')
+      li.inline-flex.items-center
+        a(class="text-gray-600 hover:text-blue-500" href='#').
+          錄音室預訂
+        svg.w-5.h-auto.fill-current.mx-2.text-gray-400(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 24 24')
+          path(d='M0 0h24v24H0V0z', fill='none')
+          path(d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z')
+      li.inline-flex.items-center
+        a(class="text-gray-600 hover:text-blue-500" href='#').
+          5D盒子｜最多3人錄音
+  div(class="pt-[30px] px-2.5 screen:px-5 pb-2.5 screen:grid screen:grid-cols-[20%_1fr] screen:gap-x-[4%] relative screen:items-start")
+    div(class="min-h-[100px] mb-[30px] screen:order-2")
+      .grid.grid-cols-4.mb-7(class="gap-[5px]")
+        div.col-start-1.col-end-5
+          a(href="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba.jpeg" data-fancybox="gallery")
+            img(width='570', height='570', src='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-570x570.jpeg', alt, title='IMG_7669-1ef3-570x570', data-caption, data-src='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba.jpeg', data-large_image='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba.jpeg', data-large_image_width='570', data-large_image_height='570', srcset='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba.jpeg 570w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-150x150.jpeg 150w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-300x300.jpeg 300w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-500x500.jpeg 500w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-350x350.jpeg 350w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-100x100.jpeg 100w', sizes='(max-width: 570px) 100vw, 570px')
+        div
+          a(href="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6.jpg" data-fancybox="gallery")
+            img(width='350', height='350', src='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6-350x350.jpg', alt, title='IMG_7670', data-caption, data-src='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6.jpg', data-large_image='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6.jpg', data-large_image_width='1280', data-large_image_height='1707', srcset='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6-350x350.jpg 350w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6-150x150.jpg 150w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6-500x500.jpg 500w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6-570x570.jpg 570w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7670-1ef6-100x100.jpg 100w', sizes='(max-width: 350px) 100vw, 350px')
+        div
+          a(href="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba.jpeg" data-fancybox="gallery")
+            img(width='350', height='350', src='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0-350x350.jpg', alt, title='IMG_7668', data-caption, data-src='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0.jpg', data-large_image='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0.jpg', data-large_image_width='1280', data-large_image_height='960', srcset='https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0-350x350.jpg 350w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0-150x150.jpg 150w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0-500x500.jpg 500w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0-570x570.jpg 570w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7668-1ef0-100x100.jpg 100w', sizes='(max-width: 350px) 100vw, 350px')
+      div(class="mb-[30px] text-sm font-light")
+        p.mb-6 MicMind Studio 除了提供完善且高品質的錄音設備外，也提供六種不同主題的錄音空間租借。
+        p.mb-6 不論您是錄製、Youtube、直播、線上課程、節目拍攝，一間錄音室，給您最多元的使用！
+      .flex.justify-between.items-center.text-sm.font-light(class="mb-3.5")
+        p 顯示單一結果
+        select.border(class="border-[#ddd] py-2 px-2.5")
+          option(value="default") 預設排序
+          option(value="default") 依熱銷度
+          option(value="default") 依上架時間
+          option(value="default") 依價格排序:低至高
+          option(value="default") 依價格排序:高至低
+      .grid.grid-cols-2(class="gap-x-[4%] gap-y-10 screen:grid-cols-4")
+        +product('5D盒子｜最多3人錄音')
+        +product('小日子｜最多2人錄音')
+        +product('粉紅音浪｜最多3人錄音')
+        +product('粉紅音浪｜最多3人錄音')
+        +product('粉紅音浪｜最多3人錄音')
+        +product('粉紅音浪｜最多3人錄音')
+    aside(class="text-[#323232] mb-[30px] screen:order-1 screen:sticky screen:top-0")
+      .font-light(class="text-[21px] mb-5 pb-[15px] relative after:absolute after:w-[30px] after:h-px after:bg-[#ddd] after:bottom-0 after:left-0") 商品分類
+      ul.text-xs
+        li.mb-2.flex.items-center
+          svg.w-2.h-2.mr-3(xmlns='http://www.w3.org/2000/svg', fill='none', viewBox='0 0 24 24', stroke-width='1.5', stroke='currentColor')
+            path(stroke-linecap='round', stroke-linejoin='round', d='M8.25 4.5l7.5 7.5-7.5 7.5')
+          a.font-light.text-sm(href="booking.html") 錄音室預訂
+        li.mb-2.flex.items-center
+          svg.w-2.h-2.mr-3(xmlns='http://www.w3.org/2000/svg', fill='none', viewBox='0 0 24 24', stroke-width='1.5', stroke='currentColor')
+            path(stroke-linecap='round', stroke-linejoin='round', d='M8.25 4.5l7.5 7.5-7.5 7.5')
+          a.font-light.text-sm(href="sale.html") 常客優惠方案
+        li.flex.items-center
+          svg.w-2.h-2.mr-3(xmlns='http://www.w3.org/2000/svg', fill='none', viewBox='0 0 24 24', stroke-width='1.5', stroke='currentColor')
+            path(stroke-linecap='round', stroke-linejoin='round', d='M8.25 4.5l7.5 7.5-7.5 7.5')
+          a.font-light.text-sm(href="program.html") Podcast 製作服務
+block script
+  script(src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js")
+  script.
+    Fancybox.bind("[data-fancybox]", {
+      //- backdropClick: false,
+      //- dragToClose: false,
+      Thumbs: false,
+    });
