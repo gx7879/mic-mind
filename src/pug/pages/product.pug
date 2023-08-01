@@ -63,23 +63,38 @@ block content
             br
             |我們等待，你的故事填滿5D盒子的色彩
           .mb-8
-            .p-4.border(class="border-black/50")
-              label(class="text-lg mb-[5px] text-[#2b2b2b]" for="")
-                |預約錄音時間
-                em *
-              p.font-light.mb-3(class="text-[#323232]")
-                |請多幫自己預訂半小時
-                br
-                |每個預訂之間並不會預留空擋，因此請在預定時間內完成所有錄製工作，建議前後各預留15-20分鐘，處理傳輸錄音檔案、攝影裝置架設、場佈、場復以及其他可能需要預留的時間，避免影響節目錄製及影響接下來的使用者。
-              select(class="mb-2 border border-[#ddd] py-2 px-2.5 w-full text-lg" name="")
-                option(value="") 選擇一個選項...
-                option(value="") 1小時
-                option(value="") 1.5小時
-                option(value="") 2小時
-                option(value="") 2.5小時
-                option(value="") 3小時
-                option(value="") 3.5小時
-                option(value="") 4小時
+            .p-4.pb-0.mb-4.border(class="border-black/5")
+              .border-b(class="border-black/5 mb-4 pb-4 border-dashed")
+                label(class="text-lg mb-[5px] text-[#2b2b2b]" for="")
+                  |預約錄音時間
+                  em *
+                p.font-light.mb-3(class="text-[#323232]")
+                  |請多幫自己預訂半小時
+                  br
+                  |每個預訂之間並不會預留空擋，因此請在預定時間內完成所有錄製工作，建議前後各預留15-20分鐘，處理傳輸錄音檔案、攝影裝置架設、場佈、場復以及其他可能需要預留的時間，避免影響節目錄製及影響接下來的使用者。
+                select#selectHoures(class="mb-2 border border-[#ddd] py-2 px-2.5 w-full text-lg" name="")
+                  option(value="") 選擇一個選項...
+                  option(value="") 1小時
+                  option(value="") 1.5小時
+                  option(value="") 2小時
+                  option(value="") 2.5小時
+                  option(value="") 3小時
+                  option(value="") 3.5小時
+                  option(value="") 4小時
+              #datepicker(class="[&>*]:w-full pb-4 border-b border-black/5 border-dashed")
+              .p-4.grid.grid-cols-3.items-start.text-center.text-sm(class="text-[#2b2b2b] border-b border-black/5 border-dashed")
+                each val in ['早上', '下午', '晚上']
+                  div
+                    div(class="mb-2.5")=val
+                    .font-semibold.py-3(class="px-[5px]")
+                      a.block(href="#") 10:00
+                    .font-semibold.py-3(class="px-[5px]")
+                      a.block(href="#") 10:30
+              #timeSelectResulr.hidden.p-4
+                span(class="text-[#323232] font-light") 2023-08-09 17:30:00 最多只剩下 0 個時段
+            button(type="button" class="bg-[#f24d07] text-white rounded-[3px] py-2.5 px-4") 立即預約
+
+
 
 
           .flex.justify-between.items-center.text-sm.font-light(class="mb-3.5")
@@ -118,3 +133,6 @@ block script
     Fancybox.bind("[data-fancybox]", {
       Thumbs: false,
     });
+    function getTime(selectDate, selectHoures = '') {
+      console.log(selectDate, selectHoures)
+    }
