@@ -11,7 +11,7 @@ const datepicker = new AirDatepicker("#datepicker", {
   },
 });
 const selectHours = document.querySelector("#selectHoures");
-selectHours.addEventListener("change", function() {
+selectHours?.addEventListener("change", function() {
   const date = datepicker.lastSelectedDate;
   const hour = this.value;
   getTime(date, hour);
