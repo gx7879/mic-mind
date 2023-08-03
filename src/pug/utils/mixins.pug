@@ -3,11 +3,11 @@ mixin item(title, descr)
     h2.item-title= title
     p.item-descr= descr
 
-mixin product(title, boolean)
+mixin product(title, boolean, relative)
   a(href="#")
     .text-center
       img(class="mb-3.5" src="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-350x350.jpeg", alt="" width="350" height="350" srcset="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-350x350.jpeg 350w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-150x150.jpeg 150w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-300x300.jpeg 300w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba.jpeg 570w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-500x500.jpeg 500w, https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba-100x100.jpeg 100w" sizes="(max-width: 350px) 100vw, 350px")
-      h2.text-xl.pb-1= title
+      h2.pb-1(class=relative?'text-sm':'text-xl')= title
       if boolean
         div(class="text-[#dd4200] mb-1.5") NT$500
       else

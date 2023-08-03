@@ -1,30 +1,30 @@
 import "./assets/scss/main.scss";
-import AirDatepicker from 'air-datepicker';
-import localeZh from 'air-datepicker/locale/zh';
+import AirDatepicker from "air-datepicker";
+import localeZh from "air-datepicker/locale/zh";
 // import 'air-datepicker/air-datepicker.css';
 
-const datepicker = new AirDatepicker('#datepicker', {
+const datepicker = new AirDatepicker("#datepicker", {
   selectedDates: [new Date()],
   locale: localeZh,
   onSelect(date) {
-    getTime(date)
-  }
-})
-const selectHours = document.querySelector('#selectHoures')
-selectHours.addEventListener('change', function () {
-  const date = datepicker.lastSelectedDate
-  const hour = this.value
-  getTime(date, hour)
-})
+    getTime(date);
+  },
+});
+const selectHours = document.querySelector("#selectHoures");
+selectHours.addEventListener("change", function() {
+  const date = datepicker.lastSelectedDate;
+  const hour = this.value;
+  getTime(date, hour);
+});
 
 const menuLink = document.querySelectorAll(".menu-link");
 const mask = document.querySelector(".menu-mask");
 const menuBtn = document.querySelector(".hamburger-btn");
-menuBtn.addEventListener("click", function () {
+menuBtn.addEventListener("click", function() {
   mask.classList.toggle("hidden");
 });
 
-mask.addEventListener("click", function (e) {
+mask.addEventListener("click", function(e) {
   // e.stopPropagation();
   if (e.target === mask) {
     mask.classList.toggle("hidden");

@@ -30,7 +30,7 @@ block content
           5D盒子｜最多3人錄音
   div(class="pt-[30px] px-2.5 screen:px-5 pb-2.5 screen:grid screen:grid-cols-[20%_1fr] screen:gap-x-[4%] relative screen:items-start")
     div(class="min-h-[100px] mb-[30px] screen:order-2")
-      div(class="md:grid md:grid-cols-2 md:gap-[4%] items-start")
+      div(class="md:grid md:grid-cols-2 md:gap-x-[4%] items-start")
         .grid.grid-cols-4.mb-7(class="gap-[5px]")
           div.col-start-1.col-end-5
             a(href="https://d2otiughgt5pr2.cloudfront.net/wp-content/uploads/sites/2273/2021/10/IMG_7669-1ef3-570x570-c6ba.jpeg" data-fancybox="gallery")
@@ -93,25 +93,128 @@ block content
               #timeSelectResulr.hidden.p-4
                 span(class="text-[#323232] font-light") 2023-08-09 17:30:00 最多只剩下 0 個時段
             button(type="button" class="bg-[#f24d07] text-white rounded-[3px] py-2.5 px-4") 立即預約
+          div.font-light.text-sm(class="text-[#323232]") 分類: 
+            a(href="#") 錄音室預訂
 
 
-
-
-          .flex.justify-between.items-center.text-sm.font-light(class="mb-3.5")
-            p 顯示單一結果
-            select.border(class="border-[#ddd] py-2 px-2.5")
-              option(value="default") 預設排序
-              option(value="default") 依熱銷度
-              option(value="default") 依上架時間
-              option(value="default") 依價格排序:低至高
-              option(value="default") 依價格排序:高至低
-          .grid.grid-cols-2(class="gap-x-[4%] gap-y-10 screen:grid-cols-4")
-            +product('5D盒子｜最多3人錄音')
-            +product('小日子｜最多2人錄音')
-            +product('粉紅音浪｜最多3人錄音')
-            +product('粉紅音浪｜最多3人錄音')
-            +product('粉紅音浪｜最多3人錄音')
-            +product('粉紅音浪｜最多3人錄音')
+        div(class="col-span-2")
+          div(class="text-[#323232] mb-[25px]")
+            ul.flex.flex-wrap.border-b(class="border-[#ddd]")
+              li(class="text-sm text-[#43454b]")
+                a(class="tab-item block py-2.5 px-[15px] border-b-2 border-black" href="#tab1") 資訊
+              li(class="text-sm text-[#43454b]")
+                a(class="tab-item block py-2.5 px-[15px]" href="#tab2") 預訂更改與取消條款
+              li(class="text-sm text-[#43454b]")
+                a(class="tab-item block py-2.5 px-[15px]" href="#tab3") 空間使用須知
+              li(class="text-sm text-[#43454b]")
+                a(class="tab-item block py-2.5 px-[15px]" href="#tab4") 設備須知
+            #tab-content
+              #tab1.tab-content.pt-5
+                div.text-sm.text-start
+                  p.mb-6 5D盒子 5D Box 空間資訊
+                  ol.list-decimal.list-outside.font-light.ml-5
+                    li(class="py-[5px]") 適合容納人數上限：3 – 4人
+                    li(class="py-[5px]")
+                      |錄音設備資訊如下：
+                      br
+                      |．RODE CASTER PRO 混音器 x 1台
+                      br
+                      |．RØDECaster
+                      em  Pro
+                      |  麥克風 x 2組
+                      br
+                      |．SONY MDR-7506 專業耳罩式耳機 x 2組
+                    li(class="py-[5px]") 空調溫度、燈光亮度、色調皆可自行調整。
+              #tab2.tab-content.pt-5.hidden
+                div
+                  ol.list-decimal.list-outside.text-sm.font-light.ml-5(class="mb-[25px]")
+                    li(class="py-[5px]")
+                      | 使用日的七天前可免費取消亦可全額退款（不包含使用當日），
+                      br
+                      | 七天內至使用日前一天，可更改一次日期（原使用日一個月內），不退款。
+                    li(class="py-[5px]")
+                      | 取消或變更訂單請於上午10:00-晚上21:30前，來電或透過訊息( LINE@、粉專私訊)，並提供預訂單單號及姓名方便查詢。
+                      br
+                      | 若超過晚上21:30前告知，則算隔日。
+                    li(class="py-[5px]") 當日未到或當日取消，恕不退款亦不得更改日期。
+                    li(class="py-[5px]") 若台北市、新北市政府任一宣佈停止上班上課（如：颱風假），我們將同步停止錄音室的營運，並統一發信告知當天有預訂的客人，亦可協助預訂客人更改或免費取消。
+                    li(class="py-[5px]") 若更改原預訂時段，若原有優惠價，可能因變更預訂後需補付差價。
+                    li(class="py-[5px]") 本公司退款時間固定每週五進行退款作業，最終退款入帳時間可能與你的信用卡結帳日有關。
+                    li(class="py-[5px]") ＊預訂當日恕不接受更改。
+                    li(class="py-[5px]")
+                      | MicMind Studio保留修改預訂須知的權利
+                      br
+                      | 之後若有修改，也將更新在預訂系統內，並且不會個別通知。若你透過系統完成預訂，就代表您已經閱讀，並同意一切規範。
+                  p.text-sm.font-light.mb-6
+                    | ＊計算舉例：
+                    br
+                    | 11/14 13:00 的預訂，11/6 21:29 之前可以申請免費取消退款。
+                    br
+                    | 11/6 21:30起 – 11/13 21:29 可更改一次時段，11/14當日無法變更、取消不退款。
+              #tab3.tab-content.pt-5.hidden
+                div(class="")
+                  ol.list-decimal.list-outside.text-sm.font-light.ml-5(class="mb-[25px]")
+                    li(class="py-[5px]")
+                      | 請多幫自己預訂半小時
+                      br
+                      | 每個預訂之間並不會預留空擋，因此請在預定時間內完成所有錄製工作，建議前後各預留15-20分鐘，處理傳輸錄音檔案、攝影裝置架設、場佈、場復以及其他可能需要預留的時間，
+                      br
+                      | 避免影響節目錄製及影響接下來的使用者。
+                    li(class="py-[5px]")
+                      | 請提早5-10分鐘抵達，放鬆心情喘口氣
+                      br
+                      | 我們有足夠的等待空間可以讓您稍做休憩，也有現場人員能帶您快速導覽公區設備，讓您在租借使用上能更加安全及便利。
+                    li(class="py-[5px]") 室內請脱鞋，備有乾淨室內拖鞋。
+                    li(class="py-[5px]") 入內請將您的手機調成靜音或振動，並勿大聲喧嘩以及製造任何噪音。
+                    li(class="py-[5px]") 大廳備有冰熱飲水機可使用，亦可自備保溫杯瓶使用。
+                    li(class="py-[5px]") 在公共區域等待預約時間時請控制音量避免影響到其他使用者。
+                    li(class="py-[5px]")
+                      | 請填飽肚子後再入場。
+                      br
+                      | 因空間內較多易沾染氣味的地毯及布製品，因此禁止在空間內吃東西。
+                      br
+                      | 但可自備保溫瓶、瓶裝飲料…等不易打翻的飲料入場。
+                    li(class="py-[5px]") 離開時請務必將垃圾清乾淨；若使用過後環境過於髒亂、造成設備毀損、違反使用規定，將視情況收取清潔費及維護費。
+                    li(class="py-[5px]")
+                      | 如需延長時間，請於結束前30分鐘至櫃檯詢問，以現場狀況彈性調整。
+                      br
+                      | 如超過預定使用時間五分鐘以上，耽誤之後使用者，將收取逾時費，是該時段之費率收取30分鐘之費用，且須立即歸還設備並離場。
+                    li(class="py-[5px]") 租借時間至下一組預約使用者前，如有空餘時間，可加時租借空間，加時最低以半小時計，現場加時一率以原價費率計算。
+                    li(class="py-[5px]")
+                      | 錄音空間內請不要大聲喧嘩
+                      br
+                      | 雖然房內有做隔音設備，但還是請務必在合理的音量範圍內使用空間，也請注意交談時錄音室的們是否有確實關上。
+                    li(class="py-[5px]") 使用後需將場地復原，將垃圾丟棄至大廳的垃圾桶並做好垃圾分類。
+                  p.text-sm.font-light.mb-6
+                    | ⚠️禁止事項：點燃明火、吸菸、毒品、性愛、攜帶寵物 (導盲犬不在此限)、危險物品，以及賭博等違反法令規定、公共秩序或善良風俗的行為。
+              #tab4.tab-content.pt-5.hidden
+                div(class="")
+                  ol.list-decimal.list-outside.text-sm.font-light.ml-5(class="mb-[25px]")
+                    li(class="py-[5px]")
+                      | 請自備MICRO SD記憶卡（一般大小）
+                      br
+                      | 連接電腦的錄音方式並不屬於我們的業務範圍，請自備記憶卡。錄音音檔大小約4GB/30mins，請務必準備足夠的容量。
+                    li(class="py-[5px]") 因錄音介面需要建立自己的路徑，請確認該記憶卡內容是可以格式化，並建議使用前先進行格式化。
+                    li(class="py-[5px]") 請避免與其他裝置（尤其是相機）共用該記憶卡，使用單純電腦傳輸資料的記憶卡為佳。
+                    li(class="py-[5px]")
+                      | 錄音室不負任何因來賓未帶記憶卡或其他設備而消耗使用時間的責任。
+                      br
+                      | 如有必要請向工作人員現場購買記憶卡。
+                    li(class="py-[5px]")
+                      | 開始之前請先確認設備
+                      br
+                      | 每次錄音皆會有工作人員帶位入場，為維護每一組客人的權益，未經同意請勿自行進入空間，也請在錄音開始前確認所有設備都是完好的狀態，使用者應盡善良管理人之保管義務，待工作人員離開後，若有任何器材損毀或遺失，則可能會有其他的衍生費用產生。
+                    li(class="py-[5px]") 飲用飲品請遠離錄音設備，以及線材拉動的區域。
+                    li(class="py-[5px]") 本空間之器材所有權為MicMind Studio所有，使用者不得拆解或更換零件及自攜出空間 進行轉租，轉售。
+                    li(class="py-[5px]") 為維護錄音空間使用品質，請遵守本空間各項使用規定，未遵守規定者，本空間保留謝絕進入之權利。
+                  p.text-sm.font-light.mb-6 ＊若有相關問題請聯繫現場工作人員，我們將盡快為你服務。
+          div
+            h2.mb-5(class="text-[28px]") 相關商品
+            .grid.grid-cols-2(class="gap-x-[4%] gap-y-10 screen:grid-cols-4")
+              +product('5D盒子｜最多3人錄音', false, true)
+              +product('小日子｜最多2人錄音', false, true)
+              +product('粉紅音浪｜最多3人錄音', false, true)
+              +product('粉紅音浪｜最多3人錄音', false, true)
     aside(class="text-[#323232] mb-[30px] screen:order-1 screen:sticky screen:top-0")
       .font-light(class="text-[21px] mb-5 pb-[15px] relative after:absolute after:w-[30px] after:h-px after:bg-[#ddd] after:bottom-0 after:left-0") 商品分類
       ul.text-xs
@@ -136,3 +239,18 @@ block script
     function getTime(selectDate, selectHoures = '') {
       console.log(selectDate, selectHoures)
     }
+    const tabs = document.querySelectorAll('.tab-item')
+    const tabContents = document.querySelectorAll('.tab-content')
+
+    tabs.forEach((tab)=>{
+      tab.addEventListener('click', function(e) {
+        for(let i = 0;i<tabs.length;i++){
+          tabs[i].classList.remove('border-b-2', 'border-black')
+          tabContents[i].classList.add('hidden')
+        }
+        e.preventDefault();
+        this.classList.add('border-b-2', 'border-black')
+        const tabContent = document.querySelector(this.getAttribute('href'))
+        tabContent.classList.remove('hidden')
+      })
+    })
