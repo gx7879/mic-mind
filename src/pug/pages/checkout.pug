@@ -1,0 +1,139 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Webpack + Pug';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'bg-[#f4f4f4]';
+
+block head
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css")
+
+block content
+  div(class="bg-[#f4f4f4] text-[#323232] p-5")
+    ul.flex.items-center.text-sm
+      li.inline-flex.items-center
+        a(class="text-gray-600 hover:text-blue-500" href='/')
+          svg.w-5.h-auto.fill-current.mx-2.text-gray-400(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 24 24', fill='#000000')
+            path(d='M0 0h24v24H0V0z', fill='none')
+            path(d='M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z')
+        svg.w-5.h-auto.fill-current.mx-2.text-gray-400(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 24 24')
+          path(d='M0 0h24v24H0V0z', fill='none')
+          path(d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z')
+      li.inline-flex.items-center
+        a(class="text-gray-600 hover:text-blue-500" href='#').
+          My Account
+  div(class="px-2.5")
+    .bg-white(class="mb-3.5 rounded")
+      #member.text-sm.font-light(class="py-3.5 px-7 text-[#fc2819] flex items-center")
+        svg.w-5.h-5.mr-2(xmlns='http://www.w3.org/2000/svg', fill='currentColor', viewBox='0 0 20 20')
+          path(d='M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-6.535 6.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003z')
+        |會員登入
+      #member-slidedown.border-t(class="border-[#eee] py-2.5 px-2 hidden overflow-hidden")
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="mail") 密碼
+            span.text-red-500 *
+          input#mail(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="email")
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="password") 密碼
+            span.text-red-500 *
+          input#password(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="password")
+        div(class="p-[3px]")
+          button.text-sm.text-white.w-full(class="bg-[#f24d07] mt-2.5 py-2 px-3.5 rounded-[3px]" type="button") 登入
+        .mb-6
+          a.text-sm.font-light(href="/forget-password.html") 忘記您的密嗎？
+    .bg-white(class="mb-7 rounded")
+      .text-sm.font-light(class="py-3.5 px-7 text-[#515151] flex items-center")
+        svg.w-5.h-5.mr-2(class="text-[#fc2819]" xmlns='http://www.w3.org/2000/svg', fill='currentColor', viewBox='0 0 20 20')
+          path(fill-rule='evenodd', d='M5.5 3A2.5 2.5 0 0 0 3 5.5v2.879a2.5 2.5 0 0 0 .732 1.767l6.5 6.5a2.5 2.5 0 0 0 3.536 0l2.878-2.878a2.5 2.5 0 0 0 0-3.536l-6.5-6.5A2.5 2.5 0 0 0 8.38 3H5.5zM6 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z', clip-rule='evenodd')
+        |有折價券嗎?
+        span#showCoupon(class="text-[#fc2819] cursor-pointer") 按此輸入您的折價碼
+      #coupon-slidedown.border-t(class="border-[#eee] py-2.5 px-2 hidden overflow-hidden")
+        div(class="flex items-center gap-x-3")
+          input#coupon(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text" placeholder="輸入折價券")
+          button.text-sm.text-white.whitespace-nowrap(class="bg-[#fc2819] py-2 px-3.5 rounded-[3px]" type="button") 重設密碼
+
+block script
+  script.
+    function toggleSlide(element) {
+      // Check if the element is currently visible
+      if (element.style.display== '' || element.style.display== 'none') {
+        // If the element is not visible, slide it down
+        slideDown(element);
+      } else {
+        // If the element is visible, slide it up
+        slideUp(element);
+      }
+    }
+
+    function slideDown(element) {
+
+      // If the element is not visible, set the display and height properties
+      if (element.style.display !== 'block') {
+        element.style.display = 'block';
+        element.style.height = 0;
+      }
+
+        // Get the height of the element's content
+      const contentHeight = element.scrollHeight;
+
+      // Set a variable to keep track of the element's height
+      let currentHeight = 0;
+
+      // Start an animation loop
+      function animate() {
+        // Increase the element's height by 10px
+        currentHeight += 10;
+
+        // Update the element's height
+        element.style.height = `${currentHeight}px`;
+
+        // If the element's height is less than the content height, request another animation frame
+        if (currentHeight < contentHeight) {
+          requestAnimationFrame(animate);
+        }
+      }
+
+      // Start the animation
+      animate();
+    }
+
+    function slideUp(element) {
+      // Get the height of the element's content
+      const contentHeight = element.scrollHeight;
+      // Set a variable to keep track of the element's height
+      let currentHeight = contentHeight;
+
+      // Start an animation loop
+      function animate() {
+        // Decrease the element's height by 10px
+        currentHeight -= 10;
+
+        // Update the element's height
+        element.style.height = `${currentHeight}px`;
+
+        // If the element's height is greater than 0, request another animation frame
+        if (currentHeight > 0) {
+
+          requestAnimationFrame(animate);
+        } else {
+          // If the animation is complete, hide the element
+          element.style.display = 'none';
+        }
+
+      }
+
+      // Start the animation
+      animate();
+    }
+
+    const member = document.querySelector('#member')
+    const memberSlideDown = document.querySelector('#member-slidedown')
+    member.addEventListener('click', ()=>{
+      toggleSlide(memberSlideDown)
+    })
+    const coupon = document.querySelector('#showCoupon')
+    const couponSlideDown = document.querySelector('#coupon-slidedown')
+    coupon.addEventListener('click', ()=>{
+      toggleSlide(couponSlideDown)
+    })
+    
