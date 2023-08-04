@@ -21,8 +21,8 @@ block content
           path(d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z')
       li.inline-flex.items-center
         a(class="text-gray-600 hover:text-blue-500" href='#').
-          My Account
-  div(class="px-2.5")
+          結帳
+  div(class="px-2.5 screen:px-5")
     .bg-white(class="mb-3.5 rounded")
       #member.text-sm.font-light(class="py-3.5 px-7 text-[#fc2819] flex items-center")
         svg.w-5.h-5.mr-2(xmlns='http://www.w3.org/2000/svg', fill='currentColor', viewBox='0 0 20 20')
@@ -30,7 +30,7 @@ block content
         |會員登入
       #member-slidedown.border-t(class="border-[#eee] py-2.5 px-2 hidden overflow-hidden")
         div(class="p-[3px]")
-          label(class="p-[3px] text-sm font-light leading-loose" for="mail") 密碼
+          label(class="p-[3px] text-sm font-light leading-loose" for="mail") 電子郵件
             span.text-red-500 *
           input#mail(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="email")
         div(class="p-[3px]")
@@ -46,11 +46,99 @@ block content
         svg.w-5.h-5.mr-2(class="text-[#fc2819]" xmlns='http://www.w3.org/2000/svg', fill='currentColor', viewBox='0 0 20 20')
           path(fill-rule='evenodd', d='M5.5 3A2.5 2.5 0 0 0 3 5.5v2.879a2.5 2.5 0 0 0 .732 1.767l6.5 6.5a2.5 2.5 0 0 0 3.536 0l2.878-2.878a2.5 2.5 0 0 0 0-3.536l-6.5-6.5A2.5 2.5 0 0 0 8.38 3H5.5zM6 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z', clip-rule='evenodd')
         |有折價券嗎?
-        span#showCoupon(class="text-[#fc2819] cursor-pointer") 按此輸入您的折價碼
+        span#showCoupon(class="text-[#fc2819] cursor-pointer underline") 按此輸入您的折價碼
       #coupon-slidedown.border-t(class="border-[#eee] py-2.5 px-2 hidden overflow-hidden")
         div(class="flex items-center gap-x-3")
           input#coupon(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text" placeholder="輸入折價券")
           button.text-sm.text-white.whitespace-nowrap(class="bg-[#fc2819] py-2 px-3.5 rounded-[3px]" type="button") 重設密碼
+    .div(class="md:grid md:grid-cols-2 md:gap-x-[2%] md:items-start")
+      .bg-white(class="mb-7 rounded py-[30px] px-2 border border-[#ccc]")
+        h3(class="text-[21px] mb-5") 帳單資訊
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="name") 姓名
+            span.text-red-500 *
+          input#name(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text")
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="mail") 電子郵件地址
+            span.text-red-500 *
+          input#mail(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="mail")
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="phone") 聯絡電話
+            span.text-red-500 *
+          input#phone(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="tel")
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="program") 節目名稱(協助您節目曝光)
+            span.text-red-500 *
+          input#program(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text")
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="ig") IG帳號(協助您行銷推廣)
+            span.text-red-500 *
+          input#ig(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text")
+        div(class="p-[3px] pt-2 my-5 border-t border-[#ccc]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="password") 建立登入密碼
+            span.text-red-500 *
+          input#password(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="password")
+        h3(class="text-[21px] mb-5") 額外資訊
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="remark") 訂單備註
+            span.text-red-500 *
+          textarea#remark(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" placeholder="您的訂單的備註，例如: 運送時的特別註記。")
+        h3(class="text-[21px] mt-5 mb-2.5") 發票資訊
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="taxID") 發票是否需要打統一編號
+            span.text-red-500 *
+          select#taxID(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]")
+            option(value="") 是
+            option(value="") 否
+        div(class="p-[3px]")
+          label(class="p-[3px] text-sm font-light leading-loose" for="invoice") 電子發票索取方式
+            span.text-red-500 *
+          select#invoice(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]")
+            option(value="member-vehicle") 會員載具 (電子發票將寄送至您的電子郵件地址)
+            option(value="mobile-phone-barcode") 手機條碼
+            option(value="natural-person-certificate-barcode") 自然人憑證條碼
+            option(value="donation-invoice") 捐贈發票
+          #mobile-phone-barcode.select-toggle-show.hidden
+            div(class="p-[3px]")
+              label(class="p-[3px] text-sm font-light leading-loose" for="mobile-phone-barcode-input") 載具編號 (選填)
+              input#mobile-phone-barcode-input(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text" placeholder="請輸入手機條碼")
+          #natural-person-certificate-barcode.select-toggle-show.hidden
+            div(class="p-[3px]")
+              label(class="p-[3px] text-sm font-light leading-loose" for="natural-person-certificate-barcode-input") 載具編號 (選填)
+              input#natural-person-certificate-barcode-input(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text" placeholder="請輸入自然人憑證條碼")
+          #donation-invoice.select-toggle-show.hidden
+            div(class="p-[3px]")
+              label(class="p-[3px] text-sm font-light leading-loose" for="donation-invoice-input") 愛心碼
+                a(href='https://www.einvoice.nat.gov.tw/APMEMBERVAN/XcaOrgPreserveCodeQuery/XcaOrgPreserveCodeQuery', target='_blank') 查詢愛心碼
+                |(選填)
+              input#donation-invoice-input(class="w-full p-2 bg-[#f6f6f6] rounded-sm border border-[#ddd]" type="text" placeholder="請輸入受捐單位愛心碼")
+      .bg-white(class="mb-7 rounded py-[30px] px-2 border border-[#ccc]")
+        h3(class="text-[21px] mb-5") 帳單資訊
+        .p-5.mb-6
+          table.text-start.text-sm.w-full
+            thead
+              tr
+                th.font-normal.text-start(class="py-[9px] pr-3 border-b border-[#ddd]") 商品
+                th.font-normal.text-start(class="py-[9px] pr-3 border-b border-[#ddd]") 總計
+            tbody
+              tr.font-light
+                td(class="py-[15px] border-b border-[#ddd]") 7小時｜全錄音室主題任選 × 1
+                td(class="py-[15px] border-b border-[#ddd]") NT$ 4,800
+              tr
+                td(class="py-[15px] border-b border-[#ddd]") 小計
+                td(class="py-[15px] border-b border-[#ddd]") NT$ 4,800
+              tr
+                td(class="py-[15px]") 總計
+                td(class="py-[15px]") NT$ 4,800
+        div(class="border-b border-[#d3ced2] -mx-2 px-2")
+          .flex.items-center(class="bg-[#f5f5f5] py-[15px] -mx-2 px-2")
+            input#default-radio-2.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300(class="dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" checked, type='radio', name='default-radio')
+            label.ml-2.text-sm.font-medium(class="flex items-center" for='default-radio-2') 藍新金流
+              img(class="ml-[7px]" src='https://www.micmind.studio/wp-content/plugins/spgateway/icon/newebpay.png', alt='藍新金流')
+          .text-xs.py-6.px-3.-mx-3 透過 藍新金流 付款。
+        .mt-10
+          button(class="bg-[#f24d07] rounded-[3px] w-full text-white py-3 text-sm" type="button") 下單購買
+
 
 block script
   script.
@@ -136,4 +224,12 @@ block script
     coupon.addEventListener('click', ()=>{
       toggleSlide(couponSlideDown)
     })
-    
+    const invoice = document.querySelector('#invoice')
+    const selectToggleShow = document.querySelectorAll('.select-toggle-show')
+    invoice.addEventListener('change', function(){
+      const el = this.value
+      for(let i = 0;i<selectToggleShow.length;i++) {
+        selectToggleShow[i].classList.add('hidden')
+      }
+      document.querySelector('#'+el)?.classList.remove('hidden')
+    })
